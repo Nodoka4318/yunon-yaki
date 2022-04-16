@@ -1,0 +1,100 @@
+:root {
+    --move: 2px;
+    --rotate: 1deg;
+}
+
+.buruburu {
+    display: inline-block;
+    animation: hurueru .1s  infinite;
+}
+
+.buruburu-fire {
+    display: inline-block;
+    animation: hurueru_fire .1s  infinite;
+}
+
+.buruburu-yunon {
+    display: inline-block;
+    animation: hurueru_yunon .1s  infinite;
+}
+
+.buruburu-hover:hover {
+    display: inline-block;
+    animation: hurueru .1s  infinite;
+}
+
+@keyframes hurueru {
+    0% {transform: translate(0px, 0px) rotateZ(1deg)}
+    25% {transform: translate(2px, 2px) rotateZ()}
+    50% {transform: translate(0px, 2px) rotateZ(0deg)}
+    75% {transform: translate(2px, 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+
+@keyframes hurueru_fire {
+    0% {transform: translate(0px, 0px) rotateZ(0deg)}
+    25% {transform: translate(var(--move), var(--move)) rotateZ(calc(-1 * var(--rotate)))}
+    50% {transform: translate(0px, var(--move)) rotateZ(0deg)}
+    75% {transform: translate(var(--move), 0px) rotateZ(-1deg)}
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+
+@keyframes hurueru_yunon {   
+    0% {transform: translate(var(--move), var(--move)) rotateZ(calc(-1 * var(--rotate)))}
+    25% {transform: translate(0px, 0px) rotateZ(0deg)}
+    50% {transform: translate(var(--move), 0px) rotateZ(-1deg)}
+    75% {transform: translate(0px, var(--move)) rotateZ(0deg)}  
+    100% {transform: translate(0px, 0px) rotateZ(0deg)}
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #be1a1a;
+}
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #be1a1a;
+}
+
+a.btn--radius {
+   border-radius: 100vh;
+}
